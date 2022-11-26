@@ -13,3 +13,6 @@ https://blogs.scientificamerican.com/sa-visual/pop-culture-pulsar-origin-story-o
 The basic code for this ridgeline plot was copied from a [project](https://github.com/RalucaNicola/JSAPI_demos/blob/master/ridgeline-3D/index.html) by ESRI product engineer and cartographer [Raluca Nicola](https://raluca-nicola.net/).
 
 The code has been modified so that, instead of Switzerland, the ridgeline plot shows elevation along lines of latitude in the Sierra Nevada in California.
+
+Some helpful tools for tweaking the code:
+* https://arcgis-js-api-camera-helper.gavinr.com/
