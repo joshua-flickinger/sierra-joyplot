@@ -84,11 +84,11 @@
         });
 
         var peaks = new FeatureLayer({
-          url: "https://services.arcgis.com/V6ZHFr6zdgNZuVG0/arcgis/rest/services/AlpineSummits/FeatureServer",
+          url: "https://services2.arcgis.com/FiaPA4ga0iQKduv3/arcgis/rest/services/Geonames_Physical_Points_v1/FeatureServer/0",
           returnZ: false,
           // Select peaks
           definitionExpression:
-            "NAME = 'Dufourspitze' OR NAME='Matterhorn' OR NAME='Piz Bernina' OR NAME = 'Eiger' OR NAME='Piz Murtaröl' OR NAME='Sommet des Diablerets'",
+            "NAME = 'Mount Whitney' OR NAME='Mammoth Mountain' OR NAME='Mount Shasta'",
           screenSizePerspectiveEnabled: false,
           // Set a renderer that will show the points with icon symbols
           renderer: {
@@ -130,7 +130,7 @@
               labelPlacement: "center-right",
               labelExpressionInfo: {
                 expression:
-                  "var labels = [$feature.NAME, $feature.HOEHE + 'm']; return Concatenate(labels, TextFormatting.NewLine);",
+                  "var labels = [$feature.NAME, $feature.County]; return Concatenate(labels, TextFormatting.NewLine);",
               },
               symbol: {
                 type: "label-3d", // autocasts as new LabelSymbol3D()
@@ -160,7 +160,7 @@
           container: "viewDiv",
           map: map,
           camera: {
-            position: [-119.394959, 36.881605, 15000],
+            position: [-119.394959, 36.881605, 20000],
             heading: 0,
             tilt: 70,
             fov: 10,
