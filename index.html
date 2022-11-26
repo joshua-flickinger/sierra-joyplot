@@ -84,11 +84,11 @@
         });
 
         var peaks = new FeatureLayer({
-          url: "https://services2.arcgis.com/FiaPA4ga0iQKduv3/arcgis/rest/services/Geonames_Physical_Points_v1/FeatureServer",
+          url: "https://services7.arcgis.com/hlgtGWqkM6RRz3r9/arcgis/rest/services/CA_MTN_Peaks/FeatureServer",
           returnZ: false,
           // Select peaks
           definitionExpression:
-            "gaz_name = 'Mount Whitney' OR gaz_name = 'White Mountain Peak' OR gaz_name='Mammoth Mountain' OR gaz_name='Mount Shasta'",
+            "NAME = 'Mount Whitney' OR NAME = 'White Mountain Peak' OR NAME ='Mammoth Mountain' OR NAME ='Mount Shasta'",
           screenSizePerspectiveEnabled: false,
           // Set a renderer that will show the points with icon symbols
           renderer: {
@@ -130,7 +130,7 @@
               labelPlacement: "above-center",
               labelExpressionInfo: {
                 expression:
-                  "var labels = [$feature.gaz_name, $feature.county_name]; return Concatenate(labels, TextFormatting.NewLine);",
+                  "var labels = [$feature.NAME, $feature.elev_ft + ' ft']; return Concatenate(labels, TextFormatting.NewLine);",
               },
               symbol: {
                 type: "label-3d", // autocasts as new LabelSymbol3D()
