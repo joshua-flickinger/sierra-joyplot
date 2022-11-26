@@ -130,7 +130,7 @@
               labelPlacement: "above-center",
               labelExpressionInfo: {
                 expression:
-                  "var labels = [$feature.NAME, $feature.County]; return Concatenate(labels, TextFormatting.NewLine);",
+                  "var labels = [$feature.gaz_name, $feature.county_name]; return Concatenate(labels, TextFormatting.NewLine);",
               },
               symbol: {
                 type: "label-3d", // autocasts as new LabelSymbol3D()
