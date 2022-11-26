@@ -191,7 +191,7 @@
 
         window.view = view;
         countryBoundaries
-          .queryFeatures({ where: "COUNTRY='Switzerland'", returnGeometry: true })
+          .queryFeatures({ where: "COUNTRY='United States'", returnGeometry: true })
           .then(function (result) {
             const switzerland = result.features[0].geometry;
             for (let y = ymin; y < ymax; y += 10000) {
