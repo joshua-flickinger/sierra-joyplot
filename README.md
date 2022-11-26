@@ -7,7 +7,7 @@ In 1970, Harold Craft, Jr. published his PhD thesis titled “Radio Observations
 https://blogs.scientificamerican.com/sa-visual/pop-culture-pulsar-origin-story-of-joy-division-s-unknown-pleasures-album-cover-video/
 
 ## Code
-The basic code for this ridgeline plot was copied from a project by ESRI product engineer and cartographer (Raluca Nicola)[https://raluca-nicola.net/].  Her github code can be found at:
+The basic code for this ridgeline plot was copied from a project by ESRI product engineer and cartographer [Raluca Nicola](https://raluca-nicola.net/).  Her github code can be found at:
 https://github.com/RalucaNicola/JSAPI_demos/blob/master/ridgeline-3D/index.html
 
 The code has been modified so that, instead of Switzerland, the ridgeline plot shows elevation along lines of latitude in the Sierra Nevada.
