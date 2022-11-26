@@ -62,9 +62,9 @@
           },
         });
 
-        const countryBoundaries = new FeatureLayer({
-          url: "http://services.arcgis.com/P3ePLMYs2RVChkJx/arcgis/rest/services/World_Countries_(Generalized)/FeatureServer",
-          definitionExpression: "COUNTRY = 'United States'",
+        const stateBoundaries = new FeatureLayer({
+          url: "https://services.arcgis.com/P3ePLMYs2RVChkJx/arcgis/rest/services/USA_States_Generalized_Boundaries/FeatureServer",
+          definitionExpression: "State_Name = 'California'",
           renderer: {
             type: "simple",
             symbol: {
@@ -127,7 +127,7 @@
           labelingInfo: [
             {
               // When using callouts on labels, "above-center" is the only allowed position
-              labelPlacement: "center-right",
+              labelPlacement: "above-center",
               labelExpressionInfo: {
                 expression:
                   "var labels = [$feature.NAME, $feature.County]; return Concatenate(labels, TextFormatting.NewLine);",
@@ -150,7 +150,7 @@
 
         // Create Map and View
         var map = new Map({
-          layers: [layer, countryBoundaries, peaks],
+          layers: [layer, stateBoundaries, peaks],
           ground: {
             surfaceColor: "#cdcade",
           },
@@ -160,10 +160,10 @@
           container: "viewDiv",
           map: map,
           camera: {
-            position: [-119.394959, 36.881605, 25000],
-            heading: 0,
+            position: [-117.903303, 35.417951, 30000],
+            heading: 17,
             tilt: 50,
-            fov: 10,
+            fov: 90,
           },
           viewingMode: "local",
           clippingArea: {
@@ -190,10 +190,10 @@
         view.ui.find("navigation-toggle").viewModel.navigationMode = "rotate";
 
         window.view = view;
-        countryBoundaries
-          .queryFeatures({ where: "COUNTRY='United States'", returnGeometry: true })
+        stateBoundaries
+          .queryFeatures({ where: "State_Name='California'", returnGeometry: true })
           .then(function (result) {
-            const switzerland = result.features[0].geometry;
+            const california = result.features[0].geometry;
             for (let y = ymin; y < ymax; y += 10000) {
               const line = new Polyline({
                 spatialReference: { wkid: 3857 },
