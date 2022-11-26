@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
-    <title>Swiss mountains in a 3D joyplot</title>
+    <title>California mountains in a 3D joyplot</title>
     <style>
       html,
       body,
@@ -51,10 +51,10 @@
           url: "https://elevation3d.arcgis.com/arcgis/rest/services/WorldElevation3D/TopoBathy3D/ImageServer",
         });
 
-        const xmin = 616192.3606;
-        const xmax = 1262846.8176;
-        const ymin = 5655610.7333;
-        const ymax = 6158941.8641;
+        const xmin = -13861004.1598;
+        const xmax = -12912845.7291;
+        const ymin = 3807891.5270;
+        const ymax = 5255165.9951;
 
         const layer = new GraphicsLayer({
           spatialReference: {
@@ -64,7 +64,7 @@
 
         const countryBoundaries = new FeatureLayer({
           url: "http://services.arcgis.com/P3ePLMYs2RVChkJx/arcgis/rest/services/World_Countries_(Generalized)/FeatureServer",
-          definitionExpression: "COUNTRY = 'Switzerland'",
+          definitionExpression: "COUNTRY = 'United States'",
           renderer: {
             type: "simple",
             symbol: {
